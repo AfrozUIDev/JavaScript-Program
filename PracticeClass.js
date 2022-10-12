@@ -7,6 +7,7 @@
 // });
 // console.log(c);
 
+
 // 1)
 // const arr = ["car", "cat", "bat", "car", "bat", "cat", "bat"];
 // const obj = {};
@@ -124,3 +125,25 @@
 //   }
 // }
 // console.log(arr[1]);
+/////////////////////////////////////////////////////////////////////////////////////
+
+// var string="Tushar Sagar Frank Tedd Mark Rahul Rohan Rohit Amir Akash sanjana"
+// var str1=string.toLowerCase()
+// // console.log(str1)
+// var str=str1.split(" ")
+// // console.log(str)
+// /* console.log(str) */
+// function result(a){
+// for (i=0;i<str.length;i++){
+//  number=str[i].match(/a/g)
+//  if(number){
+//  number1=str[i].match(/a/g).length
+//  if(number1){ 
+// //  if(number1>=2){ 
+// //  if(number1>=3){ 
+//  console.log(str[i])
+//  }
+//  }
+// }
+// }
+// result('a')

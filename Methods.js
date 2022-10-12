@@ -7,9 +7,33 @@
 // sort((acc,cur))        ==> []
 // reduce((acc,cur))      ==> single value
 
+// //////////////////////////////////////////////////////////////
+
+// https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-5.php
+
+// //////////////////////////////////////////////////////////////
+
 // 1) find even number from arr=[1,2,3,4,5,6,7,8,9,10]
 // const result = arr.filter((item) => item % 2 === 0);
 // console.log(result);
+// ---------------------------------------------- which is "odd" & "even"
+// for (var i=0; i<=15; i++) {
+//     if (i === 0) {
+//             console.log(i +  " is even");
+//     }
+//     else if (i % 2 === 0) {
+//             console.log(i + " is even");
+//     }
+//     else {
+//             console.log(i + " is odd");
+//     }
+// }
+// ----------------------------------------------
+// for(var i=0; i<arr.length; i++){
+//     if(arr[i]%2 == 0){
+//       console.log(arr[i]);
+//     }
+//   }
 // ----------------------------------------------
 // const result = arr.map((item) => (item % 2 != 0) * item * 2 || item);
 // console.log(result);
@@ -48,12 +72,97 @@
 
 // //////////////////////////////////////////////////////////////
 
-// 3) Remove Dublicate
+// 3) Remove Duplicate
 // let arr1=[1,2,3,6,5,6,9,8,5,6,4,2,65,4,6,4,65,2,5,]
-// const result = [...new Set(arr)];
-// const result=arr.filter((item,index)=>arr.indexOf(item)===index) // Remove dublicate
-// const result = arr.filter((item, index) => arr.indexOf(item) != index); // Give dublicate
+// let arr1=["a","b","a"]
+// const result = [...new Set(arr1)];
+// const result = arr.filter((item, index) => arr.indexOf(item) === index); // Remove ++++++++++++++++++++++duplicate
+// const result = arr.filter((item, index) => arr.indexOf(item) != index); // Give duplicate
 // console.log(result);
+
+// ----------------------------------------------
+
+// ==>Remove Duplicate using for Loop
+// let arr = [1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9, 10]
+// let result = []
+// for (let i = 0; i < arr.length; i++) {
+//   if (!result.includes(arr[i])) {
+//     result.push(arr[i])
+//   }
+// }
+// console.log(result)
+
+// ----------------------------------------------
+
+// function Duplicate(abc){
+//     let result=[]
+//     for(let i of abc){
+//         if(result.indexOf(i)===-1){
+//             result.push(i)
+//     }
+//     }
+//     console.log(result)
+// }
+// Duplicate([2,5,3,6,2,5,2,5,9,2,5,])
+
+// ----------------------------------------------
+
+// How many time Duplicate repeated
+// let arr = [1,3,6,9,3,1,7,4,2,6,1,8,0,2,3]
+// let arr1={}
+// arr.forEach((item)=>{
+//     arr1[item]=arr1[item]?arr1[item]+1:1;
+// })
+// console.log(arr1)
+
+// ----------------------------------------------
+
+// var arr = [
+//   [1, 2, 2, 3],
+//   [5, 3, 6, 6],
+//   [5, 3, 8, 8, 4, 5],
+// ];
+
+// ----------------------------------------------
+
+// var a = [].concat(...arr);
+// b = a.filter((item, i) => a.indexOf(item) != i);
+// console.log(b);
+
+// ----------------------------------------------
+// var result = [];
+// for (var i = 0; i < arr.length; i++) {
+//   for (var j = 0; j < arr[i].length; j++) {
+//     if (result.indexOf(arr[i][j]) == -1) {
+//       result.push(arr[i][j]);
+//     }
+//   }
+// }
+// console.log(result);
+
+// ----------------------------------------------
+
+// function findDuplicate(arr) {
+//   let result = [];
+//   let temp = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr[i].length; j++) {
+//       if (temp.indexOf(arr[i][j]) === -1) {
+//         temp.push(arr[i][j]);
+//       } else {
+//         result.push(arr[i][j]);
+//       }
+//     }
+//   }
+//   return result;
+// }
+// console.log(
+//   findDuplicate([
+//     [1, 2, 2, 3],
+//     [5, 3, 6, 6],
+//     [5, 3, 8, 8, 4, 5],
+//   ])
+// );
 
 // //////////////////////////////////////////////////////////////
 
@@ -88,12 +197,12 @@
 
 // ----------------------------------------------
 // =====>> add +91 in mob number
-// const bigNum = (num) => {
+// const add = (num) => {
 //   let result = num.split("");
 //   result.unshift("+91");
 //   return result.join("");
 // };
-// console.log(bigNum("7756903575"));
+// console.log(add("7756903575"));
 
 // ----------------------------------------------
 // =====>> sum of mobile number
@@ -104,6 +213,20 @@
 // };
 // console.log(sum("7756903575"));
 
+// ----------------------------------------------
+// Find sum of two numbers from array
+
+// var arr=[9,2,4,6,1]
+// var a=[]
+// for(i=0;i<arr.length;i++){
+// for(j=0;j<arr.length;j++){
+// if(arr[i]+arr[j]==13){
+// a.push(arr.indexOf(arr[j]))
+// a.push(arr.indexOf(arr[i]))
+// }
+// }
+// }
+// console.log(a)
 // ////////////////////////////////////////////////////////////////
 // 9)
 // const data = [
@@ -149,6 +272,7 @@
 //   { title: "Adidas", size: "7", Color: "red" },
 //   { title: "Adidas", size: "8", Color: "black" },
 //   { title: "Adidas", size: "9", Color: "blue" },
+
 //   { title: "Adidas", size: "7", Color: "red" },
 //   { title: "Reebok", size: "8", Color: "white" },
 //   { title: "Reebok", size: "8", Color: "Red" },
@@ -190,24 +314,279 @@
 // ////////////////////////////////////////////////////////////////
 
 // 12) Flatten the array
-let arr = [
-  [1, 2],
-  [3, 4],
-  [5, [6, [7, 8], 9]],
-  [10, 11, 12],
-];
+// let arr = [
+//   [1, 2],
+//   [3, 4],
+//   [5, [6, [7, 8], 9]],
+//   [10, 11, 12],
+// ];
 
+// function flatten(arr) {
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       result = result.concat(flatten(arr[i]));
+//     } else {
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(
+//   flatten([
+//     [1, 2],
+//     [3, 4],
+//     [5, [6, [7, 8], 9]],
+//     [10, 11, 12],
+//   ])
+// );
+
+// -------------------------------------------------------
+// var arr = [
+//   [1, 2],
+//   [3, 4],
+//   [5, [6, [7, 8], 9]],
+//   [10, 11, 12],
+// ];
+// var result = [];
+// for (var i = 0; i < arr.length; i++) {
+//   if (Array.isArray(arr[i])) {
+//     for (var j = 0; j < arr[i].length; j++) {
+//       if (Array.isArray(arr[i][j])) {
+//         for (var k = 0; k < arr[i][j].length; k++) {
+//           result.push(arr[i][j][k]);
+//         }
+//       } else {
+//         result.push(arr[i][j]);
+//       }
+//     }
+//   } else {
+//     result.push(arr[i]);
+//   }
+// }
+// console.log(result);
+// -------------------------------------------------------
 // let flattend = [].concat(...arr);
 // console.log(flattend);
 // console.log(arr,flat(2));
 
-function cunstomFlat(arr, depth = 1) {
-  let result = [];
-  arr.forEach((item) => {
-    if (Array.isArray(item) & (depth > 0)) {
-      result.push(...cunstomFlat(item, depth - 1));
-    } else result.push(item);
-  });
-  return result;
-}
-console.log(cunstomFlat(arr, 3));
+// function cunstomFlat(arr, depth = 1) {
+//   let result = [];
+//   arr.forEach((item) => {
+//     if (Array.isArray(item) & (depth > 0)) {
+//       result.push(...cunstomFlat(item, depth - 1));
+//     } else result.push(item);
+//   });
+//   return result;
+// }
+// console.log(cunstomFlat(arr, 3));
+
+// ////////////////////////////////////////////////////////////////
+
+// var arr=[[[1, [1.1]], 2, 3], [4, 5]];
+
+//  outpu==> [1, 1.1, 2, 3, 4, 5]
+// -------------------------------------------------------
+// var arr=[[[1, [1.1]], 2, 3], [4, 5]]
+// // console.log(arr.length)
+// var x=[]
+// var y=[]
+// var z=[]
+// for(var i=0;i<arr.length;i++){
+// 	if(Array.isArray(arr[i])){
+// 	z=x.concat(...arr[i])
+//     	if(Array.isArray(z)){
+//     	    y=y.concat(...z)
+//     	}
+// 	}
+// }
+// console.log(y)
+
+// -------------------------------------------------------
+
+// arr=[[[1, [1.1]], 2, 3], [4, 5]]
+
+// c=[].concat(...arr)
+// d=[].concat(...c)
+// e=[].concat(...d)
+// console.log(e)
+
+// -------------------------------------------------------
+
+// var arr=[[[1, [1.1]], 2, 3], [4, 5]]
+// const result=arr.reduce((acc,cur)=>acc.concat(cur)).reduce((acc,cur)=>acc.concat(cur))
+// const a=[].concat(...result)
+// console.log(a)
+
+// -------------------------------------------------------
+
+// function flatten(arr) {
+//     var result = [];
+//     for (var i = 0; i < arr.length; i++) {
+//       if (Array.isArray(arr[i])) {
+//         result = result.concat(flatten(arr[i]));
+//       } else {
+//         result.push(arr[i]);
+//       }
+//     }
+//     return result;
+//   }
+
+//   console.log(flatten([[[1, [1.1]], 2, 3], [4, 5]]));
+
+// ////////////////////////////////////////////////////////////////
+// 13) star inc dec
+// function increase(rows){
+//     for (let i=0; i<=rows; ++i){
+//         const result="* ".repeat(i)
+//         console.log(result)
+//     }
+// }
+// increase(5)
+// function decrease(rows){
+//     for (let i=rows; i>=0; --i){
+//         const result="* ".repeat(i)
+//         console.log(result)
+//     }
+// }
+// decrease(5)
+// -------------------------------------------------------
+// var x,y,chr;
+// for(x=1; x <=6; x++)
+// {
+//    for (y=1; y <x; y++)
+//      {
+//     chr=chr+("*");
+//       }
+//  console.log(chr);
+//  chr='';
+// }
+
+// ////////////////////////////////////////////////////////////////
+
+// 14) Pallindrom
+
+// function IsPallindrom(num) {
+//   const temp = num.toString().split("").reverse().join("") * 1;
+//   return (result = num === temp ? true : false);
+// }
+// console.log(IsPallindrom(121));
+
+// function IsPallindrom1(num) {
+//   const temp = num.toString().split("").reverse().join("");
+//   return (result = num === temp ? true : false);
+// }
+// console.log(IsPallindrom1("MADAM"));
+
+// ////////////////////////////////////////////////////////////////
+
+// 15)  "Tushar Sagar Frank Tedd Mark Rahul Rohan Rohit Amir Akash"
+
+// Take a single character as an input from user. Parse the above string and print names which have maximum occurences
+// of the character entered by the user.
+
+// Example 1 - if user enters 'a', your output should be "Sagar Akash"
+// Example 2 - if user enters 'd', your output should be "Tedd"
+
+// Answer=>
+// var string="Tushar Sagar Frank Tedd Mark Rahul Rohan Rohit Amir Akash sanjana"
+// var str1=string.toLowerCase()
+// // console.log(str1)
+// var str=str1.split(" ")
+// // console.log(str)
+// function result(a){
+// for (i=0;i<str.length;i++){
+//  number=str[i].match(/a/g)
+//  if(number){
+//  number1=str[i].match(/a/g).length
+//  if(number1){
+// //  if(number1>=2){
+// //  if(number1>=3){
+//  console.log(str[i])
+//  }
+//  }
+// }
+// }
+// result('a')
+//keep grinding yourself
+
+// ////////////////////////////////////////////////////////////////
+
+//16) write code to remove nested array without using flat method
+// let arr = [
+//     1,
+//     2,
+//     3,
+//     [4, 5, [5, 6], 7],
+//     7,
+//     8,
+//     9,
+//     9,
+//     10,
+//     [1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9, 10],
+//   ];
+//   const result = arr.flat(Infinity);
+//   console.log(result);
+
+// ////////////////////////////////////////////////////////////////
+
+// 17) write a code for palindrome function
+
+// var str = "madam";
+// const result = str.split("").reverse().join("") === str;
+// console.log(result);
+
+// --------------------------------------------
+
+// function palindrome(str) {
+//     let result = str.split("").reverse().join("");
+//     if (result === str) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+//   console.log(palindrome("madam"));
+
+// ////////////////////////////////////////////////////////////////
+
+// 18) setTimeout
+// setTimeout(bye, 1000);
+// console.log("hello");
+// function bye() {
+//   console.log("Good Buy");
+// }
+
+// ////////////////////////////////////////////////////////////////
+
+// 19) Closure function
+
+// function outerFunction(){
+//     var a = 10;
+//     function innerFunction(){
+//         var b = a +20;
+//         console.log(a);
+//     }
+//     innerFunction();
+// }
+// outerFunction();
+
+// ////////////////////////////////////////////////////////////////
+
+// 20) Add extra key in object
+// var arr = [
+//   { id: 1, type: "A" },
+//   { id: 2, type: "B", content: ["a", "b", "c"] },
+//   { id: 3, type: "C", content: [1, 2, 3] },
+//   { id: 4, type: "B", content: ["a", "b", "c"] },
+// ];
+
+// function xyz(a, b, c) {
+//   for (i = 1; i < arr.length; i++) {
+//     if (arr[i].id == a && arr[i]["type"] == b) {
+//       arr[i].content.push(c);
+//     }
+//   }
+//   console.log(arr);
+// }
+// xyz(2, "B", "z");

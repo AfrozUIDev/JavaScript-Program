@@ -1,11 +1,11 @@
-const data = [
-  { name: "Rahul", age: 15, city: "Nanded", married: "yes" },
-  { name: "Soniya", age: 19, city: "Pune", married: "No" },
-  { name: "Raju", age: 16, city: "Kolhapur", married: "No" },
-  { name: "Baburao", age: 43, city: "Solapur", married: "yes" },
-  { name: "Sham", age: 29, city: "Kolhapur", married: "No" },
-  { name: "Ravi", age: 19, city: "Pune", married: "No" },
-];
+// const data = [
+//   { name: "Rahul", age: 15, city: "Nanded", married: "yes" },
+//   { name: "Soniya", age: 19, city: "Pune", married: "No" },
+//   { name: "Raju", age: 16, city: "Kolhapur", married: "No" },
+//   { name: "Baburao", age: 43, city: "Solapur", married: "yes" },
+//   { name: "Sham", age: 29, city: "Kolhapur", married: "No" },
+//   { name: "Ravi", age: 19, city: "Pune", married: "No" },
+// ];
 
 // const result=data.filter((item)=>item.age>19)
 // const result=data.filter((item)=>item.city.includes("Pune"))
@@ -37,24 +37,25 @@ const data = [
 // )
 // console.log(data);
 
-// const products = [
-//   { title: "Adidas", size: "7", Color: "red" },
-//   { title: "Adidas", size: "8", Color: "black" },
-//   { title: "Adidas", size: "9", Color: "blue" },
-//   { title: "Adidas", size: "7", Color: "red" },
-//   { title: "Reebok", size: "8", Color: "white" },
-//   { title: "Reebok", size: "8", Color: "Red" },
-//   { title: "Reebok", size: "9", Color: "Blue" },
-//   { title: "nike", size: "9", Color: "red" },
-//   { title: "Flash", size: "7", Color: "blue" },
-//   { title: "R&B", size: "8", Color: "black" },
-//   { title: "ads", size: "7", Color: "red" },
-// ];
+const products = [
+  { title: "Adidas", size: "7", Color: "red" },
+  { title: "Adidas", size: "8", Color: "black" },
+  { title: "Adidas", size: "9", Color: "blue" },
+  { title: "Adidas", size: "7", Color: "red" },
+  { title: "Reebok", size: "8", Color: "white" },
+  { title: "Reebok", size: "8", Color: "Red" },
+  { title: "Reebok", size: "9", Color: "Blue" },
+  { title: "nike", size: "9", Color: "red" },
+  { title: "Flash", size: "7", Color: "blue" },
+  { title: "R&B", size: "8", Color: "black" },
+  { title: "ads", size: "7", Color: "red" },
+];
 
 // const result = products.filter(
 //   (item) => item.title.includes("Adidas") && item.Color.includes("red")
 // );
-// const result = product.filter(
-// (item) => item.title === "Adidas" && item.Color === "red" && item.size === "7"
-// );
-// console.log(result);
+const result = products.filter(
+(item) => item.title === "Adidas" && item.Color === "red" && item.size === "7"
+);
+console.log(result);
+
